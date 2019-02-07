@@ -7,24 +7,37 @@
 //
 
 import UIKit
+import GoogleMaps
+import CoreLocation
+import Foundation
 
-class MapViewController: UIViewController {
+protocol MapConnection {
+    func Currentlatlng(lat: Double, lng: Double)
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class MapViewController: UIViewController, MapConnection{
+    var latitude = ""
+    var longitude = ""
+    var reglat = 0.0
+    var reglng = 0.0
+    
+    func Currentlatlng(lat: Double, lng: Double) {
+        reglat = lat
+        reglng = lng
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func ButtonClick(_ sender: Any) {
+        performSegue(withIdentifier: "BackToAddToDo", sender: self )
     }
-    */
 
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EmbedMap" {
+            let mapController = segue.destination as! MapController
+            mapController.delegate = self
+            mapController.latitude = latitude
+            mapController.longitude = longitude
+        }
+    }
+ }

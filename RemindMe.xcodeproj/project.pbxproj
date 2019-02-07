@@ -12,6 +12,10 @@
 		0053EA0121CC9DC4006E3AE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053E9FF21CC9DC4006E3AE1 /* Main.storyboard */; };
 		0053EA0321CC9DC6006E3AE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0053EA0221CC9DC6006E3AE1 /* Assets.xcassets */; };
 		0053EA0621CC9DC6006E3AE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053EA0421CC9DC6006E3AE1 /* LaunchScreen.storyboard */; };
+		0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AB21DCA46A005CF573 /* AddToDoController.swift */; };
+		0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AD21DCA516005CF573 /* MapViewController.swift */; };
+		00CEDFCD2201979C0036885E /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDFCC2201979C0036885E /* MapController.swift */; };
+		DB97492BD71EE9ADC479F5FD /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE015D855359EE972CC1C37 /* Pods_RemindMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,12 @@
 		0053EA0221CC9DC6006E3AE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0053EA0521CC9DC6006E3AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0053EA0721CC9DC6006E3AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0071B5AB21DCA46A005CF573 /* AddToDoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoController.swift; sourceTree = "<group>"; };
+		0071B5AD21DCA516005CF573 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		00CEDFCC2201979C0036885E /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		6028C8CDB9574A0D109E845F /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
+		62B7BDA6978D404F97AFBDB4 /* Pods-RemindMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.debug.xcconfig"; sourceTree = "<group>"; };
+		9BE015D855359EE972CC1C37 /* Pods_RemindMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemindMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB97492BD71EE9ADC479F5FD /* Pods_RemindMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +51,8 @@
 			children = (
 				0053E9FA21CC9DC4006E3AE1 /* RemindMe */,
 				0053E9F921CC9DC4006E3AE1 /* Products */,
+				207A9709F3A3234262F98958 /* Pods */,
+				3279E96F47616BE2E4F6082A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +69,32 @@
 			children = (
 				0053E9FB21CC9DC4006E3AE1 /* AppDelegate.swift */,
 				0053E9FD21CC9DC4006E3AE1 /* ViewController.swift */,
+				0071B5AB21DCA46A005CF573 /* AddToDoController.swift */,
+				0071B5AD21DCA516005CF573 /* MapViewController.swift */,
+				00CEDFCC2201979C0036885E /* MapController.swift */,
 				0053E9FF21CC9DC4006E3AE1 /* Main.storyboard */,
 				0053EA0221CC9DC6006E3AE1 /* Assets.xcassets */,
 				0053EA0421CC9DC6006E3AE1 /* LaunchScreen.storyboard */,
 				0053EA0721CC9DC6006E3AE1 /* Info.plist */,
 			);
 			path = RemindMe;
+			sourceTree = "<group>";
+		};
+		207A9709F3A3234262F98958 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62B7BDA6978D404F97AFBDB4 /* Pods-RemindMe.debug.xcconfig */,
+				6028C8CDB9574A0D109E845F /* Pods-RemindMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3279E96F47616BE2E4F6082A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BE015D855359EE972CC1C37 /* Pods_RemindMe.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0053EA0A21CC9DC6006E3AE1 /* Build configuration list for PBXNativeTarget "RemindMe" */;
 			buildPhases = (
+				596A70EE7387E6326BCCDF51 /* [CP] Check Pods Manifest.lock */,
 				0053E9F421CC9DC4006E3AE1 /* Sources */,
 				0053E9F521CC9DC4006E3AE1 /* Frameworks */,
 				0053E9F621CC9DC4006E3AE1 /* Resources */,
+				29F5004DBE401E34D902ABAE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +165,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29F5004DBE401E34D902ABAE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		596A70EE7387E6326BCCDF51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RemindMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0053E9F421CC9DC4006E3AE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */,
 				0053E9FE21CC9DC4006E3AE1 /* ViewController.swift in Sources */,
 				0053E9FC21CC9DC4006E3AE1 /* AppDelegate.swift in Sources */,
+				00CEDFCD2201979C0036885E /* MapController.swift in Sources */,
+				0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +357,7 @@
 		};
 		0053EA0B21CC9DC6006E3AE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62B7BDA6978D404F97AFBDB4 /* Pods-RemindMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +376,7 @@
 		};
 		0053EA0C21CC9DC6006E3AE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6028C8CDB9574A0D109E845F /* Pods-RemindMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
