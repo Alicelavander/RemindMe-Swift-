@@ -12,6 +12,9 @@
 		0053EA0121CC9DC4006E3AE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053E9FF21CC9DC4006E3AE1 /* Main.storyboard */; };
 		0053EA0321CC9DC6006E3AE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0053EA0221CC9DC6006E3AE1 /* Assets.xcassets */; };
 		0053EA0621CC9DC6006E3AE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053EA0421CC9DC6006E3AE1 /* LaunchScreen.storyboard */; };
+		005DD225220D6A8D003C43FD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DD223220D6A8D003C43FD /* TableViewCell.swift */; };
+		005DD226220D6A8D003C43FD /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005DD224220D6A8D003C43FD /* TableViewCell.xib */; };
+		005DD228220D7077003C43FD /* ToDoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DD227220D7077003C43FD /* ToDoData.swift */; };
 		0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AB21DCA46A005CF573 /* AddToDoController.swift */; };
 		0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AD21DCA516005CF573 /* MapViewController.swift */; };
 		00CEDFCD2201979C0036885E /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDFCC2201979C0036885E /* MapController.swift */; };
@@ -26,8 +29,12 @@
 		0053EA0221CC9DC6006E3AE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0053EA0521CC9DC6006E3AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0053EA0721CC9DC6006E3AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		005DD223220D6A8D003C43FD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		005DD224220D6A8D003C43FD /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		005DD227220D7077003C43FD /* ToDoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoData.swift; sourceTree = "<group>"; };
 		0071B5AB21DCA46A005CF573 /* AddToDoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoController.swift; sourceTree = "<group>"; };
 		0071B5AD21DCA516005CF573 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		00B50D9C220E3A0200433BE9 /* RemindMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemindMe.entitlements; sourceTree = "<group>"; };
 		00CEDFCC2201979C0036885E /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		6028C8CDB9574A0D109E845F /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
 		62B7BDA6978D404F97AFBDB4 /* Pods-RemindMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +74,8 @@
 		0053E9FA21CC9DC4006E3AE1 /* RemindMe */ = {
 			isa = PBXGroup;
 			children = (
+				00B50D9C220E3A0200433BE9 /* RemindMe.entitlements */,
+				005DD222220D6A51003C43FD /* ToDoCell */,
 				0053E9FB21CC9DC4006E3AE1 /* AppDelegate.swift */,
 				0053E9FD21CC9DC4006E3AE1 /* ViewController.swift */,
 				0071B5AB21DCA46A005CF573 /* AddToDoController.swift */,
@@ -78,6 +87,16 @@
 				0053EA0721CC9DC6006E3AE1 /* Info.plist */,
 			);
 			path = RemindMe;
+			sourceTree = "<group>";
+		};
+		005DD222220D6A51003C43FD /* ToDoCell */ = {
+			isa = PBXGroup;
+			children = (
+				005DD223220D6A8D003C43FD /* TableViewCell.swift */,
+				005DD224220D6A8D003C43FD /* TableViewCell.xib */,
+				005DD227220D7077003C43FD /* ToDoData.swift */,
+			);
+			path = ToDoCell;
 			sourceTree = "<group>";
 		};
 		207A9709F3A3234262F98958 /* Pods */ = {
@@ -109,6 +128,7 @@
 				0053E9F521CC9DC4006E3AE1 /* Frameworks */,
 				0053E9F621CC9DC4006E3AE1 /* Resources */,
 				29F5004DBE401E34D902ABAE /* [CP] Copy Pods Resources */,
+				56D886949B817F643C1C5893 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +151,11 @@
 				TargetAttributes = {
 					0053E9F721CC9DC4006E3AE1 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -158,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0053EA0621CC9DC6006E3AE1 /* LaunchScreen.storyboard in Resources */,
+				005DD226220D6A8D003C43FD /* TableViewCell.xib in Resources */,
 				0053EA0321CC9DC6006E3AE1 /* Assets.xcassets in Resources */,
 				0053EA0121CC9DC4006E3AE1 /* Main.storyboard in Resources */,
 			);
@@ -182,6 +208,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56D886949B817F643C1C5893 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		596A70EE7387E6326BCCDF51 /* [CP] Check Pods Manifest.lock */ = {
@@ -209,9 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005DD228220D7077003C43FD /* ToDoData.swift in Sources */,
 				0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */,
 				0053E9FE21CC9DC4006E3AE1 /* ViewController.swift in Sources */,
 				0053E9FC21CC9DC4006E3AE1 /* AppDelegate.swift in Sources */,
+				005DD225220D6A8D003C43FD /* TableViewCell.swift in Sources */,
 				00CEDFCD2201979C0036885E /* MapController.swift in Sources */,
 				0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */,
 			);
@@ -360,6 +408,7 @@
 			baseConfigurationReference = 62B7BDA6978D404F97AFBDB4 /* Pods-RemindMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RemindMe/RemindMe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59W9V44UNU;
 				INFOPLIST_FILE = RemindMe/Info.plist;
@@ -379,6 +428,7 @@
 			baseConfigurationReference = 6028C8CDB9574A0D109E845F /* Pods-RemindMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RemindMe/RemindMe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59W9V44UNU;
 				INFOPLIST_FILE = RemindMe/Info.plist;

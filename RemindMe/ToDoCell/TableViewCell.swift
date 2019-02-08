@@ -9,7 +9,9 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
+    @IBOutlet weak var Color: UIView!
+    @IBOutlet weak var ToDo: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

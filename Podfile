@@ -7,4 +7,5 @@ target 'RemindMe' do
 
   # Pods for RemindMe
   pod 'GoogleMaps'
+  pod 'RealmSwift'
 end

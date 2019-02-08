@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddToDoController: UIViewController {
     var Data: Dictionary = [String:String]()
@@ -17,7 +18,59 @@ class AddToDoController: UIViewController {
     @IBOutlet weak var latTextField: UITextField!
     @IBOutlet weak var lngTextField: UITextField!
     @IBOutlet weak var ToDoTextField: UITextField!
-    @IBOutlet weak var detailTextField: UITextField!
+    @IBOutlet weak var detailTextField: UITextView!
+    @IBOutlet weak var RedButton: UIButton!
+    @IBOutlet weak var YellowButton: UIButton!
+    @IBOutlet weak var GreenButton: UIButton!
+    @IBOutlet weak var BlueButton: UIButton!
+    var selectedColor:Int = 0
+    @IBOutlet weak var RegButton: UIButton!
+    
+    @IBAction func colorTag(_ sender: UIButton){
+        switch selectedColor{
+        case RedButton.tag:
+            RedButton.layer.borderColor = UIColor.white.cgColor
+            break
+            
+        case BlueButton.tag:
+            BlueButton.layer.borderColor = UIColor.white.cgColor
+            break
+            
+        case GreenButton.tag:
+            GreenButton.layer.borderColor = UIColor.white.cgColor
+            break
+            
+        case YellowButton.tag:
+            YellowButton.layer.borderColor = UIColor.white.cgColor
+            break
+            
+        default:
+            break
+        }
+        
+        switch sender.tag {
+        case RedButton.tag:
+            RedButton.layer.borderColor = UIColor.black.cgColor
+            break
+            
+        case BlueButton.tag:
+            BlueButton.layer.borderColor = UIColor.black.cgColor
+            break
+            
+        case GreenButton.tag:
+            GreenButton.layer.borderColor = UIColor.black.cgColor
+            break
+            
+        case YellowButton.tag:
+            YellowButton.layer.borderColor = UIColor.black.cgColor
+            break
+            
+        default:
+            break
+        }
+        
+        selectedColor = sender.tag
+    }
     
     @IBAction func unwindToAddToDo(sender: UIStoryboardSegue){
         if sender.identifier == "BackToAddToDo" {
@@ -34,25 +87,10 @@ class AddToDoController: UIViewController {
         Data["ToDo"] = ToDoTextField.text
     }
     
-    @objc func lattextFieldDidChange(_ textField: UITextField) {
-        Data["lat"] = latTextField.text
-    }
-    
-    @objc func lngtextFieldDidChange(_ textField: UITextField) {
-        Data["lng"] = lngTextField.text
-    }
-    
-    @objc func detailtextFieldDidChange(_ textField: UITextField) {
-        Data["detail"] = ToDoTextField.text
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         print(regLat, regLng)
         ToDoTextField.addTarget(self, action: #selector(ToDotextFieldDidChange(_:)), for: .editingChanged)
-        //latTextField.addTarget(self, action: #selector(lattextFieldDidChange(_:)), for: .editingChanged)
-        //lngTextField.addTarget(self, action: #selector(lngtextFieldDidChange(_:)), for: .editingChanged)
-        //detailTextField.addTarget(self, action: #selector(detailtextFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,14 +99,6 @@ class AddToDoController: UIViewController {
             let mapViewController:MapViewController = segue.destination as! MapViewController
             mapViewController.latitude = String("\(lat)")
             mapViewController.longitude = String("\(lng)")
-            
-        }else if segue.identifier == "BackToView" {
-            Data["lat"] = latTextField.text
-            Data["lng"] = lngTextField.text
-            Data = [String : String](uniqueKeysWithValues: Data.sorted{ $0.key < $1.key })
-            let viewController:ViewController = segue.destination as! ViewController
-            viewController.Data = String("\(Data)")
-            print(Data)
         }
     }
 }
