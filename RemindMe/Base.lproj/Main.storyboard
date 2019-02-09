@@ -11,6 +11,46 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="e29-e1-XuO">
+            <objects>
+                <viewController id="5Nl-R1-ObL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wQa-Kz-Flg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="ALE-SL-P2v">
+                                <rect key="frame" x="20" y="120" width="335" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通知ON/OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNG-4E-V0z">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJz-69-GGJ">
+                                        <rect key="frame" x="286" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ALE-SL-P2v" firstAttribute="leading" secondItem="rsu-RF-G8z" secondAttribute="leading" constant="20" id="1Sk-JS-e74"/>
+                            <constraint firstItem="rsu-RF-G8z" firstAttribute="trailing" secondItem="ALE-SL-P2v" secondAttribute="trailing" constant="20" id="3hB-Ac-w0a"/>
+                            <constraint firstItem="ALE-SL-P2v" firstAttribute="top" secondItem="rsu-RF-G8z" secondAttribute="top" constant="100" id="AZm-zM-xc2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rsu-RF-G8z"/>
+                    </view>
+                    <connections>
+                        <segue destination="R2l-1U-Cde" kind="unwind" unwindAction="unwindToAddToDoWithSender:" id="OHj-51-JaU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wNx-7h-GFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="R2l-1U-Cde" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-896.79999999999995" y="175.86206896551727"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RemindMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HVZ-e5-CsH">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <rect key="frame" x="16" y="40" width="343" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="bKJ-ck-wNA">
@@ -59,15 +99,26 @@
                                     <segue destination="eKD-d6-qYr" kind="show" identifier="AddToDo" id="gy8-eb-eOh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8V6-jv-6st">
+                                <rect key="frame" x="10" y="10" width="31" height="30"/>
+                                <state key="normal" title="設定"/>
+                                <connections>
+                                    <segue destination="5Nl-R1-ObL" kind="popoverPresentation" popoverAnchorView="8V6-jv-6st" id="sO7-0T-2as">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0bc-75-qqL"/>
+                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0bc-75-qqL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O4i-ap-VYh" secondAttribute="trailing" constant="20" id="JtC-34-q59"/>
+                            <constraint firstItem="8V6-jv-6st" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="UMe-xn-0bg"/>
                             <constraint firstItem="HVZ-e5-CsH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YKp-lQ-wsn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O4i-ap-VYh" secondAttribute="bottom" constant="20" id="aPx-ke-ces"/>
                             <constraint firstItem="HVZ-e5-CsH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bvz-9v-pfh"/>
                             <constraint firstItem="HVZ-e5-CsH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="izs-8n-yom"/>
+                            <constraint firstItem="8V6-jv-6st" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="mOl-rh-Q9H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

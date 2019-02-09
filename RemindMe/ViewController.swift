@@ -11,6 +11,12 @@ import RealmSwift
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource{
+    @IBOutlet var Table:UITableView!
+    var list:Array<ToDoData> = Array()
+    var locationManager: CLLocationManager!
+    var CurrentLatitude = 0.0
+    var CurrentLongitude = 0.0
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -27,15 +33,39 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let Here: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
+        let There: CLLocation = CLLocation(latitude: Double(list[indexPath.row].lat) ?? 0.0, longitude: Double(list[indexPath.row].lng) ?? 0.0)
+        let Distance = There.distance(from: Here)
+        if Distance < 100 {
+            //list表示
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
-        cell.ToDo.text = list[indexPath.row].ToDo
+        let Todo = list[indexPath.row].ToDo
+        cell.ToDo.text = Todo
+        switch list[indexPath.row].Color {
+        case 1:
+            cell.Color.tintColor = UIColor(red: 246, green: 71, blue: 71, alpha: 1.0)
+            break
+            
+        case 2:
+            cell.Color.backgroundColor = UIColor(red: 243, green: 156, blue: 18, alpha: 1.0)
+            break
+            
+        case 3:
+            cell.Color.backgroundColor = UIColor(red: 25, green: 181, blue: 254, alpha: 1.0)
+            break
+            
+        case 4:
+            cell.Color.backgroundColor = UIColor(red: 135, green: 211, blue: 124, alpha: 1.0)
+            break
+            
+        default:
+            break
+        }
         return cell;
     }
-    @IBOutlet var Table:UITableView!
-    var list:Array<ToDoData> = Array()
-    var locationManager: CLLocationManager!
-    var CurrentLatitude = 0.0
-    var CurrentLongitude = 0.0
+    
     
     @IBAction func unwindToAddToDo(sender: UIStoryboardSegue){
         if sender.identifier == "BackToView" {
@@ -126,3 +156,4 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     }
 
 }
+
