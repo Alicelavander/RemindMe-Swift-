@@ -99,26 +99,15 @@
                                     <segue destination="eKD-d6-qYr" kind="show" identifier="AddToDo" id="gy8-eb-eOh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8V6-jv-6st">
-                                <rect key="frame" x="10" y="10" width="31" height="30"/>
-                                <state key="normal" title="設定"/>
-                                <connections>
-                                    <segue destination="5Nl-R1-ObL" kind="popoverPresentation" popoverAnchorView="8V6-jv-6st" id="sO7-0T-2as">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HVZ-e5-CsH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0bc-75-qqL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O4i-ap-VYh" secondAttribute="trailing" constant="20" id="JtC-34-q59"/>
-                            <constraint firstItem="8V6-jv-6st" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="UMe-xn-0bg"/>
                             <constraint firstItem="HVZ-e5-CsH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YKp-lQ-wsn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O4i-ap-VYh" secondAttribute="bottom" constant="20" id="aPx-ke-ces"/>
                             <constraint firstItem="HVZ-e5-CsH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bvz-9v-pfh"/>
                             <constraint firstItem="HVZ-e5-CsH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="izs-8n-yom"/>
-                            <constraint firstItem="8V6-jv-6st" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="mOl-rh-Q9H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
