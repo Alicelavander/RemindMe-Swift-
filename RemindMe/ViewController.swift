@@ -36,6 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         let Here: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
         let There: CLLocation = CLLocation(latitude: Double(list[indexPath.row].lat) ?? 0.0, longitude: Double(list[indexPath.row].lng) ?? 0.0)
         let Distance = There.distance(from: Here)
+        print(Distance)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
         let Todo = list[indexPath.row].ToDo.filter({_ in Distance < 100})
@@ -138,7 +139,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             let addTodoController:AddToDoController = segue.destination as! AddToDoController
             addTodoController.lat = String("\(CurrentLatitude)")
             addTodoController.lng = String("\(CurrentLongitude)")
-        }
+            }
     } 
     override func viewDidLoad() {
         print("app started")

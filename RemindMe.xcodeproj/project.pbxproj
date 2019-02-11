@@ -18,8 +18,6 @@
 		0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AB21DCA46A005CF573 /* AddToDoController.swift */; };
 		0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AD21DCA516005CF573 /* MapViewController.swift */; };
 		00B50DB12211103400433BE9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DA822110F8200433BE9 /* Realm.framework */; };
-		00B50DB22211103400433BE9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DA822110F8200433BE9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		00B50DB42211103400433BE9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DAA22110F8200433BE9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		00CEDFCD2201979C0036885E /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDFCC2201979C0036885E /* MapController.swift */; };
 		C665BEDD1B41C6BCD06D1D75 /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E44031C0B9288F181548E8 /* Pods_RemindMe.framework */; };
 /* End PBXBuildFile section */
@@ -31,8 +29,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				00B50DB42211103400433BE9 /* RealmSwift.framework in Embed Frameworks */,
-				00B50DB22211103400433BE9 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
