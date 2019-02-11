@@ -42,7 +42,7 @@
                         <viewLayoutGuide key="safeArea" id="rsu-RF-G8z"/>
                     </view>
                     <connections>
-                        <segue destination="R2l-1U-Cde" kind="unwind" unwindAction="unwindToAddToDoWithSender:" id="OHj-51-JaU"/>
+                        <segue destination="R2l-1U-Cde" kind="unwind" identifier="BackToView" unwindAction="unwindToAddToDoWithSender:" id="OHj-51-JaU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNx-7h-GFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,7 +66,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bKJ-ck-wNA" id="aYk-qK-7PM">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="124"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="123.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -341,18 +341,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lrf-Jb-0ld"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fw2-9w-4p8">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="k0b-rf-J5d">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rLY-GH-vGn">
-                                <rect key="frame" x="16" y="7" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="RAE-zY-QFP" kind="unwind" identifier="CancelForAddToDo" unwindAction="unwindFor:towards:" id="JO5-sK-std"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="BlueButton" destination="pPE-QO-nSK" id="XgV-T8-yPo"/>
                         <outlet property="GreenButton" destination="ivY-hZ-Ypu" id="uze-83-1DB"/>
