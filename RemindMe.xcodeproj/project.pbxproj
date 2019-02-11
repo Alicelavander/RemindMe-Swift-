@@ -17,7 +17,6 @@
 		005DD228220D7077003C43FD /* ToDoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DD227220D7077003C43FD /* ToDoData.swift */; };
 		0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AB21DCA46A005CF573 /* AddToDoController.swift */; };
 		0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AD21DCA516005CF573 /* MapViewController.swift */; };
-		00B50DA922110F8200433BE9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DA822110F8200433BE9 /* Realm.framework */; };
 		00B50DB12211103400433BE9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DA822110F8200433BE9 /* Realm.framework */; };
 		00B50DB22211103400433BE9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DA822110F8200433BE9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		00B50DB42211103400433BE9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DAA22110F8200433BE9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -68,7 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B50DB12211103400433BE9 /* Realm.framework in Frameworks */,
-				00B50DA922110F8200433BE9 /* Realm.framework in Frameworks */,
 				C665BEDD1B41C6BCD06D1D75 /* Pods_RemindMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
