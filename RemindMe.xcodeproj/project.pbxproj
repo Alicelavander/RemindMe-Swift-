@@ -35,6 +35,8 @@
 		0071B5AB21DCA46A005CF573 /* AddToDoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoController.swift; sourceTree = "<group>"; };
 		0071B5AD21DCA516005CF573 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		00B50D9C220E3A0200433BE9 /* RemindMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemindMe.entitlements; sourceTree = "<group>"; };
+		00B50DA122110A8700433BE9 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B50DA422110A8700433BE9 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CEDFCC2201979C0036885E /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		6028C8CDB9574A0D109E845F /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
 		62B7BDA6978D404F97AFBDB4 /* Pods-RemindMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		0053E9EF21CC9DC4006E3AE1 = {
 			isa = PBXGroup;
 			children = (
+				00B50DA422110A8700433BE9 /* RealmSwift.framework */,
+				00B50DA122110A8700433BE9 /* Realm.framework */,
 				0053E9FA21CC9DC4006E3AE1 /* RemindMe */,
 				0053E9F921CC9DC4006E3AE1 /* Products */,
 				207A9709F3A3234262F98958 /* Pods */,

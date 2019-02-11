@@ -36,12 +36,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         let Here: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
         let There: CLLocation = CLLocation(latitude: Double(list[indexPath.row].lat) ?? 0.0, longitude: Double(list[indexPath.row].lng) ?? 0.0)
         let Distance = There.distance(from: Here)
-        if Distance < 100 {
-            //list表示
-        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
-        let Todo = list[indexPath.row].ToDo
+        let Todo = list[indexPath.row].ToDo.filter({_ in Distance < 100})
         cell.ToDo.text = Todo
         switch list[indexPath.row].Color {
         case 1:
