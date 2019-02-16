@@ -76,6 +76,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
            // print(list)
             let data = addToDoController.Data
             let newToDo = ToDoData()
+			newToDo.Id = UUID().uuidString //固有のIDを作り削除機能の際に用いる
             newToDo.ToDo = data["ToDo"] ?? ""
             newToDo.lat = data["lat"] ?? ""
             newToDo.lng = data["lng"] ?? ""
