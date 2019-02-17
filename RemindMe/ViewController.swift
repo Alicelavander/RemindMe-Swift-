@@ -13,12 +13,13 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource{
     @IBOutlet var Table:UITableView!
     var list:Array<ToDoData> = Array()
+    var listHere:Array<ToDoData> = Array()
     var locationManager: CLLocationManager!
     var CurrentLatitude = 0.0
     var CurrentLongitude = 0.0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return listHere.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -33,29 +34,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let Here: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
-        let There: CLLocation = CLLocation(latitude: Double(list[indexPath.row].lat) ?? 0.0, longitude: Double(list[indexPath.row].lng) ?? 0.0)
-        let Distance = There.distance(from: Here)
-        print(Distance)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
-        let Todo = list[indexPath.row].ToDo.filter({_ in Distance < 100})
+        let Todo = listHere[indexPath.row].ToDo
         cell.ToDo.text = Todo
-        switch list[indexPath.row].Color {
+        switch listHere[indexPath.row].Color {
         case 1:
-            cell.Color.tintColor = UIColor(red: 246, green: 71, blue: 71, alpha: 1.0)
+            cell.Color.backgroundColor = UIColor(red: 246/255, green: 71/255, blue: 71/255, alpha: 1.0)
             break
             
         case 2:
-            cell.Color.backgroundColor = UIColor(red: 243, green: 156, blue: 18, alpha: 1.0)
+            cell.Color.backgroundColor = UIColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)
             break
             
         case 3:
-            cell.Color.backgroundColor = UIColor(red: 25, green: 181, blue: 254, alpha: 1.0)
+            cell.Color.backgroundColor = UIColor(red: 25/255, green: 181/255, blue: 254/255, alpha: 1.0)
             break
             
         case 4:
-            cell.Color.backgroundColor = UIColor(red: 135, green: 211, blue: 124, alpha: 1.0)
+            cell.Color.backgroundColor = UIColor(red: 135/255, green: 211/255, blue: 124/255, alpha: 1.0)
             break
             
         default:
@@ -63,7 +59,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
         return cell;
     }
-    
     
     @IBAction func unwindToAddToDo(sender: UIStoryboardSegue){
         if sender.identifier == "BackToView" {
@@ -73,7 +68,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             addToDoController.Data["detail"] = addToDoController.detailTextField.text
             addToDoController.Data["Color"] = String(addToDoController.selectedColor)
             
-           // print(list)
             let data = addToDoController.Data
             let newToDo = ToDoData()
             newToDo.ToDo = data["ToDo"] ?? ""
@@ -83,7 +77,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             newToDo.Color = Int(data["Color"] ?? "0") ?? 0
             list.append(newToDo)
             print(list)
-            Table.reloadData()
+            showFilteredList()
             do{
                 let realm = try Realm()
                 try! realm.write{
@@ -99,11 +93,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         do{
             let realm = try Realm()
             list = Array(realm.objects(ToDoData.self))
+            showFilteredList()
             Table.reloadData()
         }catch{
             
         }
     }
+    
+    func showFilteredList(){
+        listHere.removeAll()
+        for item in list {
+            let Here: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
+            let There: CLLocation = CLLocation(latitude: Double(item.lat) ?? 0.0, longitude: Double(item.lng) ?? 0.0)
+            let Distance = There.distance(from: Here)
+            print(Distance)
+            if Distance < 100 {
+                listHere.append(item)
+            }
+        }
+        Table.reloadData()
+    }
+    
 /////ここからLocation & Basic stuff/////
     func myLocationManagerSetup() {
         locationManager = CLLocationManager()
@@ -129,9 +139,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         let location = locations.first
         let latitude = location?.coordinate.latitude
         let longitude = location?.coordinate.longitude
-        
         CurrentLatitude = latitude!
         CurrentLongitude = longitude!
+        print("Current Location at ViewController",CurrentLatitude,",",CurrentLongitude)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

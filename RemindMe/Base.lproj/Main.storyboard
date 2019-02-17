@@ -243,7 +243,7 @@
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3X7-4i-5w1">
                                         <rect key="frame" x="94" y="0.0" width="53.5" height="50"/>
-                                        <color key="backgroundColor" red="0.97680455450000003" green="0.74059345907188578" blue="0.44939809823725951" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.97254901960784312" green="0.73725490196078436" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title=" "/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -412,7 +412,7 @@
     </scenes>
     <resources>
         <image name="プラスアイコン" width="2105" height="2105"/>
-        <image name="地図ボタン" width="4743" height="845"/>
+        <image name="地図ボタン" width="9486" height="1691"/>
         <image name="登録ボタン" width="3728" height="1691"/>
         <image name="選択ボタン" width="3728" height="1691"/>
     </resources>

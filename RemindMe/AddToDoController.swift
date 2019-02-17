@@ -95,7 +95,7 @@ class AddToDoController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapView" {
-            print("AddTodo location:",lat, lng)
+            print("Current location at AddToDo:",lat, lng)
             let mapViewController:MapViewController = segue.destination as! MapViewController
             mapViewController.latitude = String("\(lat)")
             mapViewController.longitude = String("\(lng)")
