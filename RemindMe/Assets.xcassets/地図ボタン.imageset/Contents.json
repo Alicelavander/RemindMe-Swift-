@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "地図ボタンのコピー.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "地図ボタン.png",
       "scale" : "2x"
     },
     {
