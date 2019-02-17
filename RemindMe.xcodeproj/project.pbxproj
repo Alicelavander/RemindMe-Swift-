@@ -24,6 +24,8 @@
 		00B50DBD2218EA8F00433BE9 /* プラスアイコンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DBC2218EA8F00433BE9 /* プラスアイコンのコピー.png */; };
 		00CEDFCD2201979C0036885E /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDFCC2201979C0036885E /* MapController.swift */; };
 		00E962862218F6D800EF694C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E962852218F6D800EF694C /* Notification.swift */; };
+		00E9628822191A0500EF694C /* 地図ボタン.svg in Resources */ = {isa = PBXBuildFile; fileRef = 00E9628722191A0500EF694C /* 地図ボタン.svg */; };
+		00E9628A22191A4000EF694C /* 地図ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E9628922191A4000EF694C /* 地図ボタン.png */; };
 		C665BEDD1B41C6BCD06D1D75 /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E44031C0B9288F181548E8 /* Pods_RemindMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		00B50DBC2218EA8F00433BE9 /* プラスアイコンのコピー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "プラスアイコンのコピー.png"; sourceTree = "<group>"; };
 		00CEDFCC2201979C0036885E /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		00E962852218F6D800EF694C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		00E9628722191A0500EF694C /* 地図ボタン.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "地図ボタン.svg"; sourceTree = "<group>"; };
+		00E9628922191A4000EF694C /* 地図ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地図ボタン.png"; sourceTree = "<group>"; };
 		6853545550480E4430702AAA /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
 		88B6065262EEF9222A639C22 /* Pods-RemindMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E44031C0B9288F181548E8 /* Pods_RemindMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemindMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +135,9 @@
 		00B50DB52218EA3F00433BE9 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				00E9628722191A0500EF694C /* 地図ボタン.svg */,
 				00B50DB82218EA5600433BE9 /* 地図ボタンのコピー.png */,
+				00E9628922191A4000EF694C /* 地図ボタン.png */,
 				00B50DBC2218EA8F00433BE9 /* プラスアイコンのコピー.png */,
 				00B50DBA2218EA5B00433BE9 /* 登録ボタンのコピー.png */,
 				00B50DB62218EA4E00433BE9 /* 選択ボタンのコピー.png */,
@@ -228,8 +234,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E9628A22191A4000EF694C /* 地図ボタン.png in Resources */,
 				0053EA0621CC9DC6006E3AE1 /* LaunchScreen.storyboard in Resources */,
 				00B50DB72218EA4E00433BE9 /* 選択ボタンのコピー.png in Resources */,
+				00E9628822191A0500EF694C /* 地図ボタン.svg in Resources */,
 				00B50DBD2218EA8F00433BE9 /* プラスアイコンのコピー.png in Resources */,
 				005DD226220D6A8D003C43FD /* TableViewCell.xib in Resources */,
 				00B50DBB2218EA5B00433BE9 /* 登録ボタンのコピー.png in Resources */,

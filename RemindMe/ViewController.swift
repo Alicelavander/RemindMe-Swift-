@@ -34,6 +34,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }
     }
     
+    func tableView(tableView: UITableView,canEditRowAtIndexPath indexPath: IndexPath) -> Bool
+    {
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
         let Todo = listHere[indexPath.row].ToDo
