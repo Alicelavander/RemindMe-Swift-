@@ -32,15 +32,42 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJ8-cD-RoO">
+                        <rect key="frame" x="16" y="11" width="288" height="102"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                <size key="value" width="0.0" height="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="88G-yY-NCv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="3PZ-3A-aEI"/>
                     <constraint firstItem="FcQ-ld-Lzd" firstAttribute="leading" secondItem="88G-yY-NCv" secondAttribute="trailing" constant="5" id="58A-lA-mhY"/>
                     <constraint firstItem="FcQ-ld-Lzd" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="93L-yX-bNB"/>
+                    <constraint firstItem="tJ8-cD-RoO" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="9OE-nd-9mY"/>
                     <constraint firstItem="88G-yY-NCv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="A9N-9Q-7Ov"/>
+                    <constraint firstItem="tJ8-cD-RoO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="MWi-40-IAe"/>
                     <constraint firstItem="FcQ-ld-Lzd" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Qyx-C9-l3O"/>
                     <constraint firstItem="FcQ-ld-Lzd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Why-bi-CE9"/>
                     <constraint firstItem="88G-yY-NCv" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Zk0-BW-ueI"/>
+                    <constraint firstItem="tJ8-cD-RoO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="iMC-jf-GQq"/>
+                    <constraint firstItem="tJ8-cD-RoO" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="sa9-DY-hE7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

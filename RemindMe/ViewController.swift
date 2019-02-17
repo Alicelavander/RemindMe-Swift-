@@ -15,6 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     var list:Array<ToDoData> = Array()
     var listHere:Array<ToDoData> = Array()
     var locationManager: CLLocationManager!
+    let notificationManager: Notification = Notification.init()
     var CurrentLatitude = 0.0
     var CurrentLongitude = 0.0
     
@@ -86,6 +87,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             }catch{
                 
             }
+            
+            startLocationService(manager: locationManager)
         }
     }
     
@@ -115,6 +118,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     }
     
 /////ここからLocation & Basic stuff/////
+    private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status != CLAuthorizationStatus.authorizedAlways {
+            return
+        }
+        
+        if !CLLocationManager.locationServicesEnabled() {
+            return
+        }
+        
+        startLocationService(manager: manager)
+    }
+    
     func myLocationManagerSetup() {
         locationManager = CLLocationManager()
         guard let locationManager = locationManager else { return }
@@ -144,6 +159,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         print("Current Location at ViewController",CurrentLatitude,",",CurrentLongitude)
     }
 
+    func startLocationService(manager: CLLocationManager) {
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.distanceFilter = kCLDistanceFilterNone
+    }
+    
+    func registerLocationBasedLocalNotification(latitude latitude: CLLocationDegrees, longitude: CLLocationDegrees, radius: CLLocationDistance) {
+        let center = CLLocationCoordinate2DMake(latitude, longitude)
+        let region = CLCircularRegion.init(center: center, radius: radius, identifier: "YourLocationIdentifier")
+        region.notifyOnExit = false
+        notificationManager.setLocationBasedLocalNotification(region: region, alertAction: "Alert Action", alertBody: "あいうえお", soundName: UILocalNotificationDefaultSoundName)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddToDo" {
             let addTodoController:AddToDoController = segue.destination as! AddToDoController
