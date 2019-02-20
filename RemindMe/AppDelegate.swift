@@ -15,6 +15,7 @@ import UserNotifications
 @UIApplicationMain
     class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     var window: UIWindow?
+    var backgroundTaskID : UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyCwxqVIh8uufpXqfgHeOwK5aVC4C5nJZ98")
@@ -57,7 +58,6 @@ import UserNotifications
             }
         }
     }
-    
     
     /////////////////////////////////////////////////////////////////////////////////
     func applicationWillResignActive(_ application: UIApplication) {

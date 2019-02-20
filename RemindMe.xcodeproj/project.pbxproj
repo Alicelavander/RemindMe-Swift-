@@ -23,9 +23,9 @@
 		00B50DBB2218EA5B00433BE9 /* 登録ボタンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DBA2218EA5B00433BE9 /* 登録ボタンのコピー.png */; };
 		00B50DBD2218EA8F00433BE9 /* プラスアイコンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DBC2218EA8F00433BE9 /* プラスアイコンのコピー.png */; };
 		00CEDFCD2201979C0036885E /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDFCC2201979C0036885E /* MapController.swift */; };
-		00E962862218F6D800EF694C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E962852218F6D800EF694C /* Notification.swift */; };
 		00E9628822191A0500EF694C /* 地図ボタン.svg in Resources */ = {isa = PBXBuildFile; fileRef = 00E9628722191A0500EF694C /* 地図ボタン.svg */; };
 		00E9628A22191A4000EF694C /* 地図ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E9628922191A4000EF694C /* 地図ボタン.png */; };
+		00E9628C221D5A4F00EF694C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9628B221D5A4F00EF694C /* NotificationManager.swift */; };
 		C665BEDD1B41C6BCD06D1D75 /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0E44031C0B9288F181548E8 /* Pods_RemindMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,9 +63,9 @@
 		00B50DBA2218EA5B00433BE9 /* 登録ボタンのコピー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登録ボタンのコピー.png"; sourceTree = "<group>"; };
 		00B50DBC2218EA8F00433BE9 /* プラスアイコンのコピー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "プラスアイコンのコピー.png"; sourceTree = "<group>"; };
 		00CEDFCC2201979C0036885E /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
-		00E962852218F6D800EF694C /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		00E9628722191A0500EF694C /* 地図ボタン.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "地図ボタン.svg"; sourceTree = "<group>"; };
 		00E9628922191A4000EF694C /* 地図ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地図ボタン.png"; sourceTree = "<group>"; };
+		00E9628B221D5A4F00EF694C /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		6853545550480E4430702AAA /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
 		88B6065262EEF9222A639C22 /* Pods-RemindMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E44031C0B9288F181548E8 /* Pods_RemindMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemindMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,8 +109,8 @@
 				00B50D9C220E3A0200433BE9 /* RemindMe.entitlements */,
 				005DD222220D6A51003C43FD /* ToDoCell */,
 				0053E9FB21CC9DC4006E3AE1 /* AppDelegate.swift */,
-				00E962852218F6D800EF694C /* Notification.swift */,
 				0053E9FD21CC9DC4006E3AE1 /* ViewController.swift */,
+				00E9628B221D5A4F00EF694C /* NotificationManager.swift */,
 				0071B5AB21DCA46A005CF573 /* AddToDoController.swift */,
 				0071B5AD21DCA516005CF573 /* MapViewController.swift */,
 				00CEDFCC2201979C0036885E /* MapController.swift */,
@@ -317,9 +317,9 @@
 				0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */,
 				0053E9FE21CC9DC4006E3AE1 /* ViewController.swift in Sources */,
 				0053E9FC21CC9DC4006E3AE1 /* AppDelegate.swift in Sources */,
-				00E962862218F6D800EF694C /* Notification.swift in Sources */,
 				005DD225220D6A8D003C43FD /* TableViewCell.swift in Sources */,
 				00CEDFCD2201979C0036885E /* MapController.swift in Sources */,
+				00E9628C221D5A4F00EF694C /* NotificationManager.swift in Sources */,
 				0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

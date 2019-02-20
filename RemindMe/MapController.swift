@@ -22,7 +22,7 @@ class MapController: UIViewController, GMSMapViewDelegate{
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
         mapView.clear()
-        let marker = GMSMarker(position: coordinate)
+        marker = GMSMarker(position: coordinate)
         reglat = coordinate.latitude
         reglng = coordinate.longitude
         marker.map = mapView
