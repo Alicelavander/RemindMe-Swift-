@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00355CD82220A048003BFBCB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00355CD72220A048003BFBCB /* DetailViewController.swift */; };
+		00355CDA2220CD4E003BFBCB /* ToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00355CD92220CD4E003BFBCB /* ToDoRepository.swift */; };
 		0053E9FC21CC9DC4006E3AE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053E9FB21CC9DC4006E3AE1 /* AppDelegate.swift */; };
 		0053E9FE21CC9DC4006E3AE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053E9FD21CC9DC4006E3AE1 /* ViewController.swift */; };
 		0053EA0121CC9DC4006E3AE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0053E9FF21CC9DC4006E3AE1 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00355CD72220A048003BFBCB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		00355CD92220CD4E003BFBCB /* ToDoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepository.swift; sourceTree = "<group>"; };
 		0053E9F821CC9DC4006E3AE1 /* RemindMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0053E9FB21CC9DC4006E3AE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0053E9FD21CC9DC4006E3AE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +112,9 @@
 				00B50DB52218EA3F00433BE9 /* images */,
 				00B50D9C220E3A0200433BE9 /* RemindMe.entitlements */,
 				005DD222220D6A51003C43FD /* ToDoCell */,
+				00355CD92220CD4E003BFBCB /* ToDoRepository.swift */,
 				0053E9FB21CC9DC4006E3AE1 /* AppDelegate.swift */,
+				00355CD72220A048003BFBCB /* DetailViewController.swift */,
 				0053E9FD21CC9DC4006E3AE1 /* ViewController.swift */,
 				00E9628B221D5A4F00EF694C /* NotificationManager.swift */,
 				0071B5AB21DCA46A005CF573 /* AddToDoController.swift */,
@@ -313,10 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00355CD82220A048003BFBCB /* DetailViewController.swift in Sources */,
 				005DD228220D7077003C43FD /* ToDoData.swift in Sources */,
 				0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */,
 				0053E9FE21CC9DC4006E3AE1 /* ViewController.swift in Sources */,
 				0053E9FC21CC9DC4006E3AE1 /* AppDelegate.swift in Sources */,
+				00355CDA2220CD4E003BFBCB /* ToDoRepository.swift in Sources */,
 				005DD225220D6A8D003C43FD /* TableViewCell.swift in Sources */,
 				00CEDFCD2201979C0036885E /* MapController.swift in Sources */,
 				00E9628C221D5A4F00EF694C /* NotificationManager.swift in Sources */,

@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="-896.79999999999995" y="175.86206896551727"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="6Wq-zX-mFn">
             <objects>
-                <viewController id="ewL-Iz-kPq" sceneMemberID="viewController">
+                <viewController id="ewL-Iz-kPq" customClass="DetailViewController" customModule="RemindMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Yh-jV-SvW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,7 +66,11 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="ここにToDoが表示されるよ" id="U9O-eK-H24">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="d8K-fC-ZOg"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="d8K-fC-ZOg">
+                                            <connections>
+                                                <segue destination="0Gh-sy-7Lp" kind="unwind" identifier="EndDetail" unwindAction="unwindToListToDoWithSender:" id="dQW-Hd-jea"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -105,8 +109,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yTA-i4-95u"/>
                     </view>
+                    <connections>
+                        <outlet property="Background" destination="HpT-Ez-hiz" id="CtP-0i-cHl"/>
+                        <outlet property="Detailfield" destination="6pS-kq-R8d" id="zxj-gt-CLb"/>
+                        <outlet property="ggg" destination="U9O-eK-H24" id="55M-DT-5SH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JYM-Lc-3bM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0Gh-sy-7Lp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-74.400000000000006" y="-510.49475262368821"/>
         </scene>
@@ -175,6 +185,7 @@
                     <navigationItem key="navigationItem" id="5nW-Bf-gtS"/>
                     <connections>
                         <outlet property="table" destination="HVZ-e5-CsH" id="2ZS-Bs-9aU"/>
+                        <segue destination="ewL-Iz-kPq" kind="show" identifier="ShowDetail" id="DNJ-DP-HgV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -380,7 +391,7 @@
                                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="RAE-zY-QFP" kind="unwind" identifier="BackToView" unwindAction="unwindToAddToDoWithSender:" id="KJS-41-Idh"/>
+                                                    <segue destination="RAE-zY-QFP" kind="unwind" identifier="BackToView" unwindAction="unwindToListToDoWithSender:" id="KJS-41-Idh"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>

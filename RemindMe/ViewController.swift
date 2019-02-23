@@ -9,10 +9,11 @@
 import UIKit
 import RealmSwift
 import CoreLocation
+import UserNotifications
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate{
     @IBOutlet var Table:UITableView!
-    var list:Array<ToDoData> = Array()
+    //var list:Array<ToDoData> = Array()
     var listHere:Array<ToDoData> = Array()
     var locationManager: CLLocationManager!
     let notificationManager: NotificationManager = NotificationManager.init()
@@ -29,44 +30,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            list.remove(at: indexPath.row)
+            listHere.remove(at: indexPath.row)
+            let ToDo = listHere[indexPath.row]
+            ToDoRepository.shared.removeTODO(ToDo)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
-    func tableView(_ tableView: UITableView,canEditRowAt indexPath: IndexPath) -> Bool
-    {
-        return true
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let todo = listHere[indexPath.row]
+        performSegue(withIdentifier: "ShowDetail", sender: todo)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
-        let Todo = listHere[indexPath.row].ToDo
-        cell.ToDo.text = Todo
-        switch listHere[indexPath.row].Color {
-        case 1:
-            cell.Color.backgroundColor = UIColor(red: 246/255, green: 71/255, blue: 71/255, alpha: 1.0)
-            break
+        let Todo = listHere[indexPath.row]
+        cell.ToDo.text = Todo.ToDo
+        cell.Color.backgroundColor = Todo.uiColor
             
-        case 2:
-            cell.Color.backgroundColor = UIColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)
-            break
-            
-        case 3:
-            cell.Color.backgroundColor = UIColor(red: 25/255, green: 181/255, blue: 254/255, alpha: 1.0)
-            break
-            
-        case 4:
-            cell.Color.backgroundColor = UIColor(red: 135/255, green: 211/255, blue: 124/255, alpha: 1.0)
-            break
-            
-        default:
-            break
-        }
         return cell;
     }
     
-    @IBAction func unwindToAddToDo(sender: UIStoryboardSegue){
+    @IBAction func unwindToListToDo(sender: UIStoryboardSegue){
         if sender.identifier == "BackToView" {
             let addToDoController:AddToDoController = sender.source as! AddToDoController
             addToDoController.Data["lat"] = addToDoController.latTextField.text
@@ -77,45 +62,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             let data = addToDoController.Data
             let newToDo = ToDoData()
             newToDo.ToDo = data["ToDo"] ?? ""
-            newToDo.lat = data["lat"] ?? ""
-            newToDo.lng = data["lng"] ?? ""
+            newToDo.lat = Double(data["lat"] ?? "") ?? 0.0
+            newToDo.lng = Double(data["lng"] ?? "") ?? 0.0
             newToDo.detail = data["detail"] ?? ""
             newToDo.Color = Int(data["Color"] ?? "0") ?? 0
-            list.append(newToDo)
-            print(list)
-            showFilteredList()
-            do{
-                let realm = try Realm()
-                try! realm.write{
-                    realm.add(newToDo)
-                }
-            }catch{
-                
-            }
-        
-        }
-        let A: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
-        let B: CLLocation = CLLocation(latitude: Data["lat"]  ?? 0.0, longitude: Data["lng"] ?? 0.0)
-        let Distance = B.distance(from: A)
-        addNewLocalNotification(lat: Data["lat"], lng: Data["lng"], distance: Distance)
-    }
-    
-    func getData(){
-        do{
-            let realm = try Realm()
-            list = Array(realm.objects(ToDoData.self))
-            showFilteredList()
-            Table.reloadData()
-        }catch{
             
+            ToDoRepository.shared.addTODO(newToDo)
+            
+            ToDoRepository.shared.printTODOs()
+            
+            showFilteredList()
+            
+            let reglat: Double = newToDo.lat
+            let reglng: Double = newToDo.lng
+            let A: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
+            let B: CLLocation = CLLocation(latitude: reglat, longitude:reglng)
+            let Distance = B.distance(from: A)
+            addNewLocalNotification(lat: reglat, lng: reglng, distance: Distance)
+        }else if sender.identifier == "EndDetail"{
+            // empty
         }
     }
     
     func showFilteredList(){
         listHere.removeAll()
+        
+        let list = ToDoRepository.shared.getTODOs()
         for item in list {
             let Here: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
-            let There: CLLocation = CLLocation(latitude: Double(item.lat) ?? 0.0, longitude: Double(item.lng) ?? 0.0)
+            let There: CLLocation = CLLocation(latitude: item.lat, longitude: item.lng)
             let Distance = There.distance(from: Here)
             print(Distance)
             if Distance < 100 {
@@ -193,36 +168,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             let addTodoController:AddToDoController = segue.destination as! AddToDoController
             addTodoController.lat = String("\(CurrentLatitude)")
             addTodoController.lng = String("\(CurrentLongitude)")
-            }
+        } else if segue.identifier == "ShowDetail" {
+            let detailViewController:DetailViewController = segue.destination as! DetailViewController
+            detailViewController.todo = sender as! ToDoData
+        }
     }
     
     override func viewDidLoad() {
         print("app started")
-        print(list)
+        ToDoRepository.shared.printTODOs()
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         Table.register(nib, forCellReuseIdentifier: "myCell")
         Table.delegate = self
         Table.dataSource = self
         super.viewDidLoad()
         myLocationManagerSetup()
-        getData()
+        showFilteredList()
         checkLocationAuthorization(callback: startLocationService)
     }
 
     func addNewLocalNotification(lat: Double, lng:Double, distance: Double){
-        let center = NotificationCenter.currentNotificationCenter()
+        let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
-        content.title = "通知のタイトル" //ここで通知のタイトルを決める
-        content.body = "通知の本文" //ここで通知の本文を決める
+        content.title = "RemindingYou" //ここで通知のタイトルを決める
+        content.body = "ここら辺でやることがあります！" //ここで通知の本文を決める
         content.sound = UNNotificationSound.default
         
         let coordinate = CLLocationCoordinate2DMake(lat, lng)
         let region = CLCircularRegion.init(center: coordinate, radius: distance, identifier: "Notification")
         region.notifyOnEntry = true;
         region.notifyOnExit = true;
-        
         let trigger = UNLocationNotificationTrigger.init(region: region, repeats: false)
         let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
         center.add(request)
