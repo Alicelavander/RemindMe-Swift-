@@ -70,9 +70,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         
         let layer = cell.layer
         layer.shadowOpacity = 0.5
-        layer.shadowRadius = 12
+        layer.shadowRadius = 4
         layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: 5, height: 5)
+        layer.shadowOffset = CGSize(width: 1, height: 2)
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGray.cgColor
         return cell;
     }
     
@@ -100,12 +102,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             
             let reglat: Double = newToDo.lat
             let reglng: Double = newToDo.lng
-            let A: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
-            let B: CLLocation = CLLocation(latitude: reglat, longitude:reglng)
-            let Distance = B.distance(from: A)
-            addNewLocalNotification(lat: reglat, lng: reglng, distance: Distance)
+            addNewLocalNotification(lat: reglat, lng: reglng, distance: 100)
         }else if sender.identifier == "EndDetail"{
             // empty
+        }else if sender.identifier == "EndSettings"{
+            //empty
         }
     }
     
@@ -185,6 +186,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         let longitude = location?.coordinate.longitude
         CurrentLatitude = latitude!
         CurrentLongitude = longitude!
+        showFilteredList()
         print("Current Location at ViewController",CurrentLatitude,",",CurrentLongitude)
     }
     
