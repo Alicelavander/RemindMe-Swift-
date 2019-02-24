@@ -21,6 +21,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     var CurrentLongitude = 0.0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //return listHere.count
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10 // セルの上部のスペース
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.clear
+    }
+    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor.clear
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return listHere.count
     }
     
@@ -30,24 +48,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            listHere.remove(at: indexPath.row)
-            let ToDo = listHere[indexPath.row]
+            let ToDo = listHere[indexPath.section]
+            listHere.remove(at: indexPath.section)
             ToDoRepository.shared.removeTODO(ToDo)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            showFilteredList()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let todo = listHere[indexPath.row]
+        let todo = listHere[indexPath.section]
         performSegue(withIdentifier: "ShowDetail", sender: todo)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
-        let Todo = listHere[indexPath.row]
+        let Todo = listHere[indexPath.section]
         cell.ToDo.text = Todo.ToDo
         cell.Color.backgroundColor = Todo.uiColor
-            
+        
+        let layer = cell.layer
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowRadius = 4
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 0.4
         return cell;
     }
     
@@ -176,15 +199,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     
     override func viewDidLoad() {
         print("app started")
+        myLocationManagerSetup()
+        checkLocationAuthorization(callback: startLocationService)
         ToDoRepository.shared.printTODOs()
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
         Table.register(nib, forCellReuseIdentifier: "myCell")
         Table.delegate = self
         Table.dataSource = self
         super.viewDidLoad()
-        myLocationManagerSetup()
         showFilteredList()
-        checkLocationAuthorization(callback: startLocationService)
+        
     }
 
     func addNewLocalNotification(lat: Double, lng:Double, distance: Double){
@@ -192,8 +216,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         center.removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
-        content.title = "RemindingYou" //ここで通知のタイトルを決める
-        content.body = "ここら辺でやることがあります！" //ここで通知の本文を決める
+        content.title = "RemindingYou"
+        content.body = "ここら辺でやることがあります！"
         content.sound = UNNotificationSound.default
         
         let coordinate = CLLocationCoordinate2DMake(lat, lng)

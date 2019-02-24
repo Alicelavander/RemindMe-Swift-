@@ -25,9 +25,9 @@ extension ToDoData{
         case 2:
             return UIColor(red: 243/255, green: 156/255, blue: 18/255, alpha: 1.0)
         case 3:
-            return UIColor(red: 25/255, green: 181/255, blue: 254/255, alpha: 1.0)
-        case 4:
             return UIColor(red: 135/255, green: 211/255, blue: 124/255, alpha: 1.0)
+        case 4:
+            return UIColor(red: 25/255, green: 181/255, blue: 254/255, alpha: 1.0)
         default:
             return UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
         }
