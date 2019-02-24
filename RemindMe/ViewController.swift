@@ -31,6 +31,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 10
     }
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         view.tintColor = UIColor.clear
     }
@@ -58,6 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let todo = listHere[indexPath.section]
         performSegue(withIdentifier: "ShowDetail", sender: todo)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,10 +69,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         cell.Color.backgroundColor = Todo.uiColor
         
         let layer = cell.layer
-        layer.shadowOffset = CGSize(width: 0, height: 1)
-        layer.shadowRadius = 4
-        layer.shadowColor = UIColor.lightGray.cgColor
-        layer.shadowOpacity = 0.4
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius = 12
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 5, height: 5)
         return cell;
     }
     

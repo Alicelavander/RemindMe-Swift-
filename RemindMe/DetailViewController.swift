@@ -9,7 +9,8 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    @IBOutlet weak var Detailfield: UILabel!
+    
+    @IBOutlet weak var Detailfield: UITextView!
     @IBOutlet weak var Background: UIView!
     
     var todo = ToDoData()

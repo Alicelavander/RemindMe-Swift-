@@ -26,7 +26,7 @@
                             <constraint firstAttribute="width" constant="70" id="acx-Pp-dhK"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDoが表示されるよ！" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcQ-ld-Lzd">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ToDoが表示されるよ！" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcQ-ld-Lzd">
                         <rect key="frame" x="75" y="0.0" width="245" height="123.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -48,7 +48,7 @@
                 <outlet property="Color" destination="88G-yY-NCv" id="dvp-ec-QfG"/>
                 <outlet property="ToDo" destination="FcQ-ld-Lzd" id="tlc-mS-eW3"/>
             </connections>
-            <point key="canvasLocation" x="137.59999999999999" y="136.73163418290855"/>
+            <point key="canvasLocation" x="33.600000000000001" y="78.260869565217391"/>
         </tableViewCell>
     </objects>
 </document>

@@ -83,35 +83,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ここに詳細が表示されるよ" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pS-kq-R8d">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="ここに詳細が表示されるよ！" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWd-Ph-V1o">
                                 <rect key="frame" x="16" y="123" width="343" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HpT-Ez-hiz" firstAttribute="bottom" secondItem="yTA-i4-95u" secondAttribute="bottom" id="38S-Zy-0Kn"/>
-                            <constraint firstItem="HpT-Ez-hiz" firstAttribute="leading" secondItem="yTA-i4-95u" secondAttribute="leading" id="8ah-tU-99I"/>
+                            <constraint firstItem="2rG-QA-Stw" firstAttribute="top" secondItem="dyl-a2-K41" secondAttribute="bottom" constant="30" id="0BL-TL-yES"/>
+                            <constraint firstItem="HpT-Ez-hiz" firstAttribute="top" secondItem="dyl-a2-K41" secondAttribute="bottom" id="70l-UH-roX"/>
+                            <constraint firstItem="EWd-Ph-V1o" firstAttribute="top" secondItem="2rG-QA-Stw" secondAttribute="bottom" constant="8" id="7cf-B4-dcT"/>
+                            <constraint firstItem="yTA-i4-95u" firstAttribute="bottom" secondItem="EWd-Ph-V1o" secondAttribute="bottom" constant="20" id="99E-TM-JiK"/>
                             <constraint firstItem="dyl-a2-K41" firstAttribute="trailing" secondItem="yTA-i4-95u" secondAttribute="trailing" id="B8S-Wr-bsz"/>
-                            <constraint firstItem="HpT-Ez-hiz" firstAttribute="top" secondItem="dyl-a2-K41" secondAttribute="bottom" id="D3u-Vt-v0M"/>
-                            <constraint firstItem="6pS-kq-R8d" firstAttribute="leading" secondItem="yTA-i4-95u" secondAttribute="leading" constant="16" id="Kmz-KL-6sg"/>
-                            <constraint firstItem="HpT-Ez-hiz" firstAttribute="trailing" secondItem="yTA-i4-95u" secondAttribute="trailing" id="bLx-ZZ-8y4"/>
-                            <constraint firstItem="yTA-i4-95u" firstAttribute="trailing" secondItem="6pS-kq-R8d" secondAttribute="trailing" constant="16" id="drY-QG-6fN"/>
-                            <constraint firstItem="yTA-i4-95u" firstAttribute="bottom" secondItem="6pS-kq-R8d" secondAttribute="bottom" constant="20" id="hWl-gD-7tb"/>
+                            <constraint firstItem="yTA-i4-95u" firstAttribute="trailing" secondItem="EWd-Ph-V1o" secondAttribute="trailing" constant="16" id="E53-wr-rxf"/>
+                            <constraint firstAttribute="trailing" secondItem="HpT-Ez-hiz" secondAttribute="trailing" id="QJE-Wy-hzK"/>
+                            <constraint firstItem="EWd-Ph-V1o" firstAttribute="leading" secondItem="yTA-i4-95u" secondAttribute="leading" constant="16" id="Wzd-Gj-V9c"/>
+                            <constraint firstItem="HpT-Ez-hiz" firstAttribute="leading" secondItem="5Yh-jV-SvW" secondAttribute="leading" id="lak-9w-K9b"/>
                             <constraint firstItem="dyl-a2-K41" firstAttribute="leading" secondItem="yTA-i4-95u" secondAttribute="leading" id="mOa-mH-mwt"/>
+                            <constraint firstAttribute="bottom" secondItem="HpT-Ez-hiz" secondAttribute="bottom" id="mcK-3Z-Rrm"/>
                             <constraint firstItem="2rG-QA-Stw" firstAttribute="leading" secondItem="yTA-i4-95u" secondAttribute="leading" constant="16" id="n9h-Ro-TDp"/>
                             <constraint firstItem="dyl-a2-K41" firstAttribute="top" secondItem="yTA-i4-95u" secondAttribute="top" id="sSn-aL-gpK"/>
-                            <constraint firstItem="2rG-QA-Stw" firstAttribute="top" secondItem="dyl-a2-K41" secondAttribute="bottom" constant="30" id="sqT-q7-8Bb"/>
-                            <constraint firstItem="6pS-kq-R8d" firstAttribute="top" secondItem="2rG-QA-Stw" secondAttribute="bottom" constant="8" id="zgg-c2-BVz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yTA-i4-95u"/>
                     </view>
                     <connections>
                         <outlet property="Background" destination="HpT-Ez-hiz" id="CtP-0i-cHl"/>
-                        <outlet property="Detailfield" destination="6pS-kq-R8d" id="zxj-gt-CLb"/>
+                        <outlet property="Detailfield" destination="EWd-Ph-V1o" id="eah-F3-6Ef"/>
                         <outlet property="ggg" destination="U9O-eK-H24" id="55M-DT-5SH"/>
                     </connections>
                 </viewController>
@@ -129,14 +128,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HVZ-e5-CsH">
-                                <rect key="frame" x="16" y="40" width="343" height="627"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="124" id="bKJ-ck-wNA">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="124"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bKJ-ck-wNA" id="aYk-qK-7PM">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="124"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
@@ -173,12 +172,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="0bc-75-qqL"/>
+                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0We-d4-FB5"/>
+                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="A8N-BN-5su"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HVZ-e5-CsH" secondAttribute="trailing" id="ALE-Ih-kCR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O4i-ap-VYh" secondAttribute="trailing" constant="20" id="JtC-34-q59"/>
-                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YKp-lQ-wsn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O4i-ap-VYh" secondAttribute="bottom" constant="20" id="aPx-ke-ces"/>
-                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bvz-9v-pfh"/>
-                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="izs-8n-yom"/>
+                            <constraint firstItem="HVZ-e5-CsH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ilX-Ir-mjQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -381,7 +380,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="　" id="X07-RL-bE9">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="stop" id="5JW-lA-pZ3"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="stop" id="5JW-lA-pZ3">
+                                            <connections>
+                                                <segue destination="RAE-zY-QFP" kind="unwind" unwindAction="unwindToListToDoWithSender:" id="IUm-XI-art"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="pVh-DS-eWm">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rVp-uW-fjI">
                                                 <rect key="frame" x="328" y="7" width="31" height="30"/>
