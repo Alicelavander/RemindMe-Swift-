@@ -45,5 +45,11 @@ class ToDoRepository {
             realm.delete(deletingToDo)
         }
     }
+    
+    func removeAllTODO(){
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
 
 }

@@ -12,6 +12,9 @@ import CoreLocation
 import UserNotifications
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource, UNUserNotificationCenterDelegate{
+    
+    @IBOutlet weak var statusLabel: UILabel!
+    
     @IBOutlet var Table:UITableView!
     //var list:Array<ToDoData> = Array()
     var listHere:Array<ToDoData> = Array()
@@ -106,7 +109,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         }else if sender.identifier == "EndDetail"{
             // empty
         }else if sender.identifier == "EndSettings"{
-            //empty
+            showFilteredList()
         }
     }
     
@@ -123,7 +126,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
                 listHere.append(item)
             }
         }
-        Table.reloadData()
+        if listHere.count >= 1 {
+            statusLabel.isHidden = true
+        } else {
+            statusLabel.isHidden = false
+            let status = CLLocationManager.authorizationStatus()
+            if status == .authorizedWhenInUse || status == .authorizedAlways {
+                statusLabel.text = "タスクが登録されていません。下のボタンからタスクを登録してください。"
+            } else {
+                statusLabel.text = "位置情報が許可されていません。設定のアプリからこのアプリの位置情報を許可してください。"
+            }
+        }
+          Table.reloadData()
     }
     
 /////ここからLocation & Basic stuff/////
@@ -198,6 +212,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         } else if segue.identifier == "ShowDetail" {
             let detailViewController:DetailViewController = segue.destination as! DetailViewController
             detailViewController.todo = sender as! ToDoData
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            print("authorisedAlways")
+            locationManager.delegate = self
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
+        } else if status == .authorizedWhenInUse {
+            print("authorisedWhenInUse")
+            locationManager.delegate = self
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
         }
     }
     

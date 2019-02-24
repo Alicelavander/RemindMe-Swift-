@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0018804722229D1A00DA5191 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0018804622229D1A00DA5191 /* SettingViewController.swift */; };
 		00355CD82220A048003BFBCB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00355CD72220A048003BFBCB /* DetailViewController.swift */; };
 		00355CDA2220CD4E003BFBCB /* ToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00355CD92220CD4E003BFBCB /* ToDoRepository.swift */; };
 		0053E9FC21CC9DC4006E3AE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053E9FB21CC9DC4006E3AE1 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0018804622229D1A00DA5191 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		00355CD72220A048003BFBCB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		00355CD92220CD4E003BFBCB /* ToDoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepository.swift; sourceTree = "<group>"; };
 		0053E9F821CC9DC4006E3AE1 /* RemindMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				00355CD92220CD4E003BFBCB /* ToDoRepository.swift */,
 				0053E9FB21CC9DC4006E3AE1 /* AppDelegate.swift */,
 				00355CD72220A048003BFBCB /* DetailViewController.swift */,
+				0018804622229D1A00DA5191 /* SettingViewController.swift */,
 				0053E9FD21CC9DC4006E3AE1 /* ViewController.swift */,
 				00E9628B221D5A4F00EF694C /* NotificationManager.swift */,
 				0071B5AB21DCA46A005CF573 /* AddToDoController.swift */,
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00355CD82220A048003BFBCB /* DetailViewController.swift in Sources */,
+				0018804722229D1A00DA5191 /* SettingViewController.swift in Sources */,
 				005DD228220D7077003C43FD /* ToDoData.swift in Sources */,
 				0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */,
 				0053E9FE21CC9DC4006E3AE1 /* ViewController.swift in Sources */,
