@@ -42,7 +42,6 @@ import UserNotifications
         UNUserNotificationCenter.current()
             .requestAuthorization(options: [.alert, .sound, .badge]) {
                 [weak self] granted, error in
-                
                 print("Permission granted: \(granted)")
                 guard granted else { return }
                 self?.getNotificationSettings()

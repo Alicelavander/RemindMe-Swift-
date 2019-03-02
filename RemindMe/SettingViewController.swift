@@ -22,7 +22,7 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func dispAlert(sender: UIButton) {
-        let alert: UIAlertController = UIAlertController(title: "タスク全削除", message: "全てのタスクを削除してもいいですか？", preferredStyle:  UIAlertController.Style.alert)
+        let alert: UIAlertController = UIAlertController(title: "タスク全削除", message: "全てのタスクを削除してもいいですか？今リストに表示されていないものも削除されます。", preferredStyle:  UIAlertController.Style.alert)
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
             (action: UIAlertAction!) -> Void in
             self.DeleteAll(self)

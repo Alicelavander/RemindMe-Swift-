@@ -13,8 +13,6 @@
         <!--Setting View Controller-->
         <scene sceneID="e29-e1-XuO">
             <objects>
-                <exit id="R2l-1U-Cde" userLabel="Exit" sceneMemberID="exit"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wNx-7h-GFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="5Nl-R1-ObL" customClass="SettingViewController" customModule="RemindMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wQa-Kz-Flg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -80,6 +78,8 @@
                         <outlet property="DataDeleteAllButton" destination="z6w-sE-CbG" id="blJ-OZ-lju"/>
                     </connections>
                 </viewController>
+                <exit id="R2l-1U-Cde" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wNx-7h-GFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-896.79999999999995" y="175.86206896551727"/>
         </scene>
@@ -117,16 +117,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="ここに詳細が表示されるよ！" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWd-Ph-V1o">
-                                <rect key="frame" x="16" y="123" width="343" height="524"/>
+                                <rect key="frame" x="20" y="123" width="335" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
+                                        <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
@@ -138,9 +135,9 @@
                             <constraint firstItem="EWd-Ph-V1o" firstAttribute="top" secondItem="2rG-QA-Stw" secondAttribute="bottom" constant="8" id="7cf-B4-dcT"/>
                             <constraint firstItem="yTA-i4-95u" firstAttribute="bottom" secondItem="EWd-Ph-V1o" secondAttribute="bottom" constant="20" id="99E-TM-JiK"/>
                             <constraint firstItem="dyl-a2-K41" firstAttribute="trailing" secondItem="yTA-i4-95u" secondAttribute="trailing" id="B8S-Wr-bsz"/>
-                            <constraint firstItem="yTA-i4-95u" firstAttribute="trailing" secondItem="EWd-Ph-V1o" secondAttribute="trailing" constant="16" id="E53-wr-rxf"/>
+                            <constraint firstItem="yTA-i4-95u" firstAttribute="trailing" secondItem="EWd-Ph-V1o" secondAttribute="trailing" constant="20" id="E53-wr-rxf"/>
                             <constraint firstAttribute="trailing" secondItem="HpT-Ez-hiz" secondAttribute="trailing" id="QJE-Wy-hzK"/>
-                            <constraint firstItem="EWd-Ph-V1o" firstAttribute="leading" secondItem="yTA-i4-95u" secondAttribute="leading" constant="16" id="Wzd-Gj-V9c"/>
+                            <constraint firstItem="EWd-Ph-V1o" firstAttribute="leading" secondItem="yTA-i4-95u" secondAttribute="leading" constant="20" id="Wzd-Gj-V9c"/>
                             <constraint firstItem="HpT-Ez-hiz" firstAttribute="leading" secondItem="5Yh-jV-SvW" secondAttribute="leading" id="lak-9w-K9b"/>
                             <constraint firstItem="dyl-a2-K41" firstAttribute="leading" secondItem="yTA-i4-95u" secondAttribute="leading" id="mOa-mH-mwt"/>
                             <constraint firstAttribute="bottom" secondItem="HpT-Ez-hiz" secondAttribute="bottom" id="mcK-3Z-Rrm"/>
@@ -266,7 +263,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.98548540612791868" green="0.98548540612791868" blue="0.98548540612791868" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タスクを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejv-rX-eyv">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タスクを入力してください" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ejv-rX-eyv">
                                 <rect key="frame" x="13" y="89.5" width="349" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -306,7 +303,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="緯度" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7he-r4-3cp">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="緯度" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7he-r4-3cp">
                                 <rect key="frame" x="13" y="228.5" width="170" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="8tw-KM-T4x"/>
@@ -315,7 +312,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="経度" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-Gi-bwO">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="経度" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-Gi-bwO">
                                 <rect key="frame" x="192" y="228.5" width="170" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="8Bl-qY-97Q"/>

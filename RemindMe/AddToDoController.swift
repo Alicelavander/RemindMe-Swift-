@@ -87,6 +87,13 @@ class AddToDoController: UIViewController {
         Data["ToDo"] = ToDoTextField.text
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        ToDoTextField.resignFirstResponder()
+        latTextField.resignFirstResponder()
+        lngTextField.resignFirstResponder()
+        detailTextField.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(regLat, regLng)

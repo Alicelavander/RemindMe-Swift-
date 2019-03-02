@@ -15,6 +15,9 @@ class ToDoData: Object{
     @objc dynamic public var lng:Double = 0.0
     @objc dynamic public var detail:String = ""
     @objc dynamic public var Color:Int = 0
+    @objc dynamic public var regionId:String = ""
+    @objc dynamic public var localPushId:String = ""
+    @objc dynamic public var timePushId:String = ""
 }
 
 extension ToDoData{

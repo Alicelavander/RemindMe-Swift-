@@ -53,7 +53,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let ToDo = listHere[indexPath.section]
+            let timerPushId: String = ToDo.timePushId
+            let localPushId: String = ToDo.localPushId
             listHere.remove(at: indexPath.section)
+            removeLocalNotification(timerId: timerPushId, localId: localPushId)
             ToDoRepository.shared.removeTODO(ToDo)
             showFilteredList()
         }
@@ -96,6 +99,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             newToDo.lng = Double(data["lng"] ?? "") ?? 0.0
             newToDo.detail = data["detail"] ?? ""
             newToDo.Color = Int(data["Color"] ?? "0") ?? 0
+            newToDo.regionId = UUID().uuidString
+            newToDo.timePushId = UUID().uuidString
+            newToDo.localPushId = UUID().uuidString
             
             ToDoRepository.shared.addTODO(newToDo)
             
@@ -103,9 +109,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             
             showFilteredList()
             
-            let reglat: Double = newToDo.lat
-            let reglng: Double = newToDo.lng
-            addNewLocalNotification(lat: reglat, lng: reglng, distance: 100)
+            addNewLocalNotification(todo: newToDo, distance: 100)
         }else if sender.identifier == "EndDetail"{
             // empty
         }else if sender.identifier == "EndSettings"{
@@ -132,7 +136,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             statusLabel.isHidden = false
             let status = CLLocationManager.authorizationStatus()
             if status == .authorizedWhenInUse || status == .authorizedAlways {
-                statusLabel.text = "タスクが登録されていません。下のボタンからタスクを登録してください。"
+                statusLabel.text = "ここら辺ではタスクがありません。下のボタンからタスクを登録してください。"
             } else {
                 statusLabel.text = "位置情報が許可されていません。設定のアプリからこのアプリの位置情報を許可してください。"
             }
@@ -177,7 +181,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     func myLocationManagerSetup() {
         locationManager = CLLocationManager()
         guard let locationManager = locationManager else { return }
-        locationManager.requestWhenInUseAuthorization()
+//        locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         
         let status = CLLocationManager.authorizationStatus()
@@ -243,7 +247,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         
     }
 
-    func addNewLocalNotification(lat: Double, lng:Double, distance: Double){
+    func addNewLocalNotification(todo: ToDoData, distance: Double){
+        let taskPosition: CLLocation = CLLocation(latitude: todo.lat, longitude: todo.lng)
+        let currentPosition: CLLocation = CLLocation(latitude: CurrentLatitude, longitude: CurrentLongitude)
+        let taskDistance = taskPosition.distance(from: currentPosition)
+        
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         
@@ -252,14 +260,42 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         content.body = "ここら辺でやることがあります！"
         content.sound = UNNotificationSound.default
         
-        let coordinate = CLLocationCoordinate2DMake(lat, lng)
-        let region = CLCircularRegion.init(center: coordinate, radius: distance, identifier: "Notification")
-        region.notifyOnEntry = true;
-        region.notifyOnExit = true;
-        let trigger = UNLocationNotificationTrigger.init(region: region, repeats: false)
-        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
+        let coordinate = CLLocationCoordinate2DMake(todo.lat, todo.lng)
+        let region = CLCircularRegion.init(center: coordinate, radius: distance, identifier: todo.regionId)
+        if taskDistance < distance {
+            let timeTrigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 10, repeats: false)
+            let request = UNNotificationRequest(identifier: todo.timePushId, content: content, trigger: timeTrigger)
+            center.add(request)
+        }
+        region.notifyOnEntry = true
+        region.notifyOnExit = true
+        let localTrigger = UNLocationNotificationTrigger.init(region: region, repeats: false)
+        let request = UNNotificationRequest(identifier: todo.localPushId, content: content, trigger: localTrigger)
         center.add(request)
         center.delegate = self
     }
+    
+    func removeLocalNotification(timerId: String, localId: String){
+        let content = UNMutableNotificationContent()
+        let center = UNUserNotificationCenter.current()
+        
+        let timerTrigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 100, repeats: false)
+        let timerRequest = UNNotificationRequest(identifier: timerId, content: content, trigger: timerTrigger)
+        center.add(timerRequest)
+        
+        let localTrigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 100, repeats: false)
+        let localRequest = UNNotificationRequest(identifier: localId, content: content, trigger: localTrigger)
+        center.add(localRequest)
+        
+        center.removePendingNotificationRequests(withIdentifiers: [timerId, localId])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // フォアグラウンドで通知を受け取った
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // バックグラウンドで通知を受け取った
+    }
 }
-
