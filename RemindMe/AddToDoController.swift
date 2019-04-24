@@ -15,6 +15,7 @@ class AddToDoController: UIViewController {
     var lng = ""
     var regLat = ""
     var regLng = ""
+    @IBOutlet weak var MapButton: UIButton!
     @IBOutlet weak var latTextField: UITextField!
     @IBOutlet weak var lngTextField: UITextField!
     @IBOutlet weak var ToDoTextField: UITextField!
@@ -96,6 +97,10 @@ class AddToDoController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        MapButton.layer.cornerRadius = 30
+        MapButton.layer.masksToBounds = true
+        MapButton.layer.borderWidth = 1
+        MapButton.layer.borderColor = UIColor.black.cgColor
         print(regLat, regLng)
         ToDoTextField.addTarget(self, action: #selector(ToDotextFieldDidChange(_:)), for: .editingChanged)
     }
@@ -108,5 +113,6 @@ class AddToDoController: UIViewController {
             mapViewController.longitude = String("\(lng)")
         }
     }
+    
 }
 

@@ -1,0 +1,10 @@
+/* 
+  Japanese.strings
+  RemindMe
+
+  Created by Alicelavander on 2019/04/18.
+  Copyright © 2019年 Alicelavander. All rights reserved.
+*/
+
+"n" = "メールアドレス";
+"button name" = "登録";

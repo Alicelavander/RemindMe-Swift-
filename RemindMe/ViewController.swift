@@ -181,7 +181,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
     func myLocationManagerSetup() {
         locationManager = CLLocationManager()
         guard let locationManager = locationManager else { return }
-//        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
         
         let status = CLLocationManager.authorizationStatus()

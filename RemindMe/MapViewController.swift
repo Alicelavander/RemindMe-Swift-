@@ -16,6 +16,8 @@ protocol MapConnection {
 }
 
 class MapViewController: UIViewController, MapConnection{
+    @IBOutlet weak var SearchBar: UITextField!
+    @IBOutlet weak var SelectButton: UIButton!
     var latitude = ""
     var longitude = ""
     var reglat = 0.0
@@ -25,9 +27,8 @@ class MapViewController: UIViewController, MapConnection{
         reglat = lat
         reglng = lng
     }
+
     
-
-
     @IBAction func ButtonClick(_ sender: Any) {
         performSegue(withIdentifier: "BackToAddToDo", sender: self )
     }
@@ -39,5 +40,13 @@ class MapViewController: UIViewController, MapConnection{
             mapController.latitude = latitude
             mapController.longitude = longitude
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        SelectButton.layer.cornerRadius = 30
+        SelectButton.layer.masksToBounds = true
+        SelectButton.layer.borderWidth = 1
+        SelectButton.layer.borderColor = UIColor.black.cgColor
     }
  }

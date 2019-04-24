@@ -20,6 +20,7 @@
 		005DD228220D7077003C43FD /* ToDoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DD227220D7077003C43FD /* ToDoData.swift */; };
 		0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AB21DCA46A005CF573 /* AddToDoController.swift */; };
 		0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AD21DCA516005CF573 /* MapViewController.swift */; };
+		00A81F8E226855EE00CC2E3A /* Japanese.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A81F8D226855EE00CC2E3A /* Japanese.strings */; };
 		00B50DB12211103400433BE9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DA822110F8200433BE9 /* Realm.framework */; };
 		00B50DB72218EA4E00433BE9 /* 選択ボタンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DB62218EA4E00433BE9 /* 選択ボタンのコピー.png */; };
 		00B50DB92218EA5600433BE9 /* 地図ボタンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DB82218EA5600433BE9 /* 地図ボタンのコピー.png */; };
@@ -61,6 +62,7 @@
 		005DD227220D7077003C43FD /* ToDoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoData.swift; sourceTree = "<group>"; };
 		0071B5AB21DCA46A005CF573 /* AddToDoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoController.swift; sourceTree = "<group>"; };
 		0071B5AD21DCA516005CF573 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		00A81F8D226855EE00CC2E3A /* Japanese.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Japanese.strings; sourceTree = "<group>"; };
 		00B50D9C220E3A0200433BE9 /* RemindMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemindMe.entitlements; sourceTree = "<group>"; };
 		00B50DA822110F8200433BE9 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B50DAA22110F8200433BE9 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				0071B5AD21DCA516005CF573 /* MapViewController.swift */,
 				00CEDFCC2201979C0036885E /* MapController.swift */,
 				0053E9FF21CC9DC4006E3AE1 /* Main.storyboard */,
+				00A81F8D226855EE00CC2E3A /* Japanese.strings */,
 				0053EA0221CC9DC6006E3AE1 /* Assets.xcassets */,
 				0053EA0421CC9DC6006E3AE1 /* LaunchScreen.storyboard */,
 				0053EA0721CC9DC6006E3AE1 /* Info.plist */,
@@ -251,6 +254,7 @@
 				005DD226220D6A8D003C43FD /* TableViewCell.xib in Resources */,
 				00B50DBB2218EA5B00433BE9 /* 登録ボタンのコピー.png in Resources */,
 				0053EA0321CC9DC6006E3AE1 /* Assets.xcassets in Resources */,
+				00A81F8E226855EE00CC2E3A /* Japanese.strings in Resources */,
 				00B50DB92218EA5600433BE9 /* 地図ボタンのコピー.png in Resources */,
 				0053EA0121CC9DC4006E3AE1 /* Main.storyboard in Resources */,
 			);
@@ -483,6 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59W9V44UNU;
 				INFOPLIST_FILE = RemindMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,6 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59W9V44UNU;
 				INFOPLIST_FILE = RemindMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
