@@ -20,12 +20,12 @@
 		005DD228220D7077003C43FD /* ToDoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DD227220D7077003C43FD /* ToDoData.swift */; };
 		0071B5AC21DCA46A005CF573 /* AddToDoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AB21DCA46A005CF573 /* AddToDoController.swift */; };
 		0071B5AE21DCA516005CF573 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0071B5AD21DCA516005CF573 /* MapViewController.swift */; };
-		00A81F8E226855EE00CC2E3A /* Japanese.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A81F8D226855EE00CC2E3A /* Japanese.strings */; };
 		00B50DB12211103400433BE9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B50DA822110F8200433BE9 /* Realm.framework */; };
 		00B50DB72218EA4E00433BE9 /* 選択ボタンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DB62218EA4E00433BE9 /* 選択ボタンのコピー.png */; };
 		00B50DB92218EA5600433BE9 /* 地図ボタンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DB82218EA5600433BE9 /* 地図ボタンのコピー.png */; };
 		00B50DBB2218EA5B00433BE9 /* 登録ボタンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DBA2218EA5B00433BE9 /* 登録ボタンのコピー.png */; };
 		00B50DBD2218EA8F00433BE9 /* プラスアイコンのコピー.png in Resources */ = {isa = PBXBuildFile; fileRef = 00B50DBC2218EA8F00433BE9 /* プラスアイコンのコピー.png */; };
+		00CE91A822A7D8F600FF6F82 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00CE91AA22A7D8F600FF6F82 /* Localizable.strings */; };
 		00CEDFCD2201979C0036885E /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDFCC2201979C0036885E /* MapController.swift */; };
 		00E9628822191A0500EF694C /* 地図ボタン.svg in Resources */ = {isa = PBXBuildFile; fileRef = 00E9628722191A0500EF694C /* 地図ボタン.svg */; };
 		00E9628A22191A4000EF694C /* 地図ボタン.png in Resources */ = {isa = PBXBuildFile; fileRef = 00E9628922191A4000EF694C /* 地図ボタン.png */; };
@@ -62,7 +62,6 @@
 		005DD227220D7077003C43FD /* ToDoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoData.swift; sourceTree = "<group>"; };
 		0071B5AB21DCA46A005CF573 /* AddToDoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoController.swift; sourceTree = "<group>"; };
 		0071B5AD21DCA516005CF573 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		00A81F8D226855EE00CC2E3A /* Japanese.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Japanese.strings; sourceTree = "<group>"; };
 		00B50D9C220E3A0200433BE9 /* RemindMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemindMe.entitlements; sourceTree = "<group>"; };
 		00B50DA822110F8200433BE9 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B50DAA22110F8200433BE9 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +69,10 @@
 		00B50DB82218EA5600433BE9 /* 地図ボタンのコピー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地図ボタンのコピー.png"; sourceTree = "<group>"; };
 		00B50DBA2218EA5B00433BE9 /* 登録ボタンのコピー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "登録ボタンのコピー.png"; sourceTree = "<group>"; };
 		00B50DBC2218EA8F00433BE9 /* プラスアイコンのコピー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "プラスアイコンのコピー.png"; sourceTree = "<group>"; };
+		00CE91A222A7D33D00FF6F82 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		00CE91A322A7D33D00FF6F82 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		00CE91A922A7D8F600FF6F82 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		00CE91AB22A7D90400FF6F82 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00CEDFCC2201979C0036885E /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		00E9628722191A0500EF694C /* 地図ボタン.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "地図ボタン.svg"; sourceTree = "<group>"; };
 		00E9628922191A4000EF694C /* 地図ボタン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地図ボタン.png"; sourceTree = "<group>"; };
@@ -126,7 +129,7 @@
 				0071B5AD21DCA516005CF573 /* MapViewController.swift */,
 				00CEDFCC2201979C0036885E /* MapController.swift */,
 				0053E9FF21CC9DC4006E3AE1 /* Main.storyboard */,
-				00A81F8D226855EE00CC2E3A /* Japanese.strings */,
+				00CE91AA22A7D8F600FF6F82 /* Localizable.strings */,
 				0053EA0221CC9DC6006E3AE1 /* Assets.xcassets */,
 				0053EA0421CC9DC6006E3AE1 /* LaunchScreen.storyboard */,
 				0053EA0721CC9DC6006E3AE1 /* Info.plist */,
@@ -248,13 +251,13 @@
 			files = (
 				00E9628A22191A4000EF694C /* 地図ボタン.png in Resources */,
 				0053EA0621CC9DC6006E3AE1 /* LaunchScreen.storyboard in Resources */,
+				00CE91A822A7D8F600FF6F82 /* Localizable.strings in Resources */,
 				00B50DB72218EA4E00433BE9 /* 選択ボタンのコピー.png in Resources */,
 				00E9628822191A0500EF694C /* 地図ボタン.svg in Resources */,
 				00B50DBD2218EA8F00433BE9 /* プラスアイコンのコピー.png in Resources */,
 				005DD226220D6A8D003C43FD /* TableViewCell.xib in Resources */,
 				00B50DBB2218EA5B00433BE9 /* 登録ボタンのコピー.png in Resources */,
 				0053EA0321CC9DC6006E3AE1 /* Assets.xcassets in Resources */,
-				00A81F8E226855EE00CC2E3A /* Japanese.strings in Resources */,
 				00B50DB92218EA5600433BE9 /* 地図ボタンのコピー.png in Resources */,
 				0053EA0121CC9DC4006E3AE1 /* Main.storyboard in Resources */,
 			);
@@ -347,6 +350,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0053EA0021CC9DC4006E3AE1 /* Base */,
+				00CE91A222A7D33D00FF6F82 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -355,8 +359,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				0053EA0521CC9DC6006E3AE1 /* Base */,
+				00CE91A322A7D33D00FF6F82 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		00CE91AA22A7D8F600FF6F82 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00CE91A922A7D8F600FF6F82 /* ja */,
+				00CE91AB22A7D90400FF6F82 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,6 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -427,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
