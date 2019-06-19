@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import UserNotifications
+import GooglePlaces
 
 
 @UIApplicationMain
@@ -18,7 +19,7 @@ import UserNotifications
     var backgroundTaskID : UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey("AIzaSyCwxqVIh8uufpXqfgHeOwK5aVC4C5nJZ98")
+        GMSServices.provideAPIKey("AIzaSyDk1B7d23lUWS6tSC4tC0_J3nbPJtNc4AU")
         registerForPushNotifications()
         return true
     }

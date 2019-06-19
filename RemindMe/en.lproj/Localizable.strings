@@ -5,3 +5,14 @@
   Created by Alicelavander on 2019/06/05.
   Copyright © 2019年 Alicelavander. All rights reserved.
 */
+
+"test.test" = "test";
+
+"notification.msge" = "You have a task to do around here!";
+
+"statusLabel.NoTask" = "There is no task around here. Please add a task from the button below.";
+
+"statusLabel.NoLocation" = "The location service is unavailable. Please set the location service on from the Settings app.";
+
+"alartBefore.removeALLTODO" = "";
+

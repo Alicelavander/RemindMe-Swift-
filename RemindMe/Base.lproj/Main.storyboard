@@ -254,8 +254,6 @@
         <!--Add To Do Controller-->
         <scene sceneID="52K-OE-tAJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y2N-sb-PaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="RAE-zY-QFP" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController modalPresentationStyle="formSheet" id="eKD-d6-qYr" customClass="AddToDoController" customModule="RemindMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Scw-kt-wUb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -518,6 +516,8 @@
                         <segue destination="RAE-zY-QFP" kind="unwind" identifier="Cancel" unwindAction="unwindToAddToDoWithSender:" id="abR-Kn-EqD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2N-sb-PaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="RAE-zY-QFP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="645.60000000000002" y="174.96251874062969"/>
         </scene>
@@ -572,8 +572,8 @@
                         <viewLayoutGuide key="safeArea" id="hQM-WN-Gt0"/>
                     </view>
                     <connections>
-                        <outlet property="SearchBar" destination="eEN-kW-vKt" id="nX2-1X-1x7"/>
                         <outlet property="SelectButton" destination="cdj-vo-w3O" id="geM-LX-jHD"/>
+                        <outlet property="placeName" destination="eEN-kW-vKt" id="5xz-bM-NUZ"/>
                         <segue destination="5mj-DO-ovt" kind="unwind" identifier="BackToAddToDo" unwindAction="unwindToAddToDoWithSender:" id="r90-4p-Glh"/>
                     </connections>
                 </viewController>

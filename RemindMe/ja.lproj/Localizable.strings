@@ -7,4 +7,10 @@
 */
 
 
-"test.test" = "テスト"
+"test.test" = "テスト";
+
+"notification.msge" = "ここら辺でやることがあります！";
+
+"statusLabel.NoTask" = "ここら辺ではタスクがありません。下のボタンからタスクを登録してください。";
+
+"statusLabel.NoLocation" = "位置情報が許可されていません。設定のアプリからこのアプリの位置情報を許可してください。";

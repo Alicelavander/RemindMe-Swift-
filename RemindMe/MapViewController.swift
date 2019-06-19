@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GooglePlaces
 import GoogleMaps
 import CoreLocation
 import Foundation
@@ -27,7 +28,6 @@ class MapViewController: UIViewController, MapConnection{
         reglat = lat
         reglng = lng
     }
-
     
     @IBAction func ButtonClick(_ sender: Any) {
         performSegue(withIdentifier: "BackToAddToDo", sender: self )
@@ -48,5 +48,11 @@ class MapViewController: UIViewController, MapConnection{
         SelectButton.layer.masksToBounds = true
         SelectButton.layer.borderWidth = 1
         SelectButton.layer.borderColor = UIColor.black.cgColor
+        
+        SearchBar.addTarget(self, action: #selector(self.AutoComplete(_:)), for: UIControl.Event.editingDidEndOnExit)
+    }
+    
+    @objc func AutoComplete(_ sender: Any) {
+        
     }
  }

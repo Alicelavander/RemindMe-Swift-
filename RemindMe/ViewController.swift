@@ -136,9 +136,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
             statusLabel.isHidden = false
             let status = CLLocationManager.authorizationStatus()
             if status == .authorizedWhenInUse || status == .authorizedAlways {
-                statusLabel.text = "ここら辺ではタスクがありません。下のボタンからタスクを登録してください。"
+                statusLabel.text = NSLocalizedString("statusLabel.NoTask", comment: "")
             } else {
-                statusLabel.text = "位置情報が許可されていません。設定のアプリからこのアプリの位置情報を許可してください。"
+                statusLabel.text = NSLocalizedString("statusLabel.NoLocation", comment: "")
             }
         }
           Table.reloadData()
@@ -257,7 +257,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDe
         
         let content = UNMutableNotificationContent()
         content.title = "RemindingYou"
-        content.body = "ここら辺でやることがあります！"
+        content.body = NSLocalizedString("notification.msge", comment: "")
         content.sound = UNNotificationSound.default
         
         let coordinate = CLLocationCoordinate2DMake(todo.lat, todo.lng)
