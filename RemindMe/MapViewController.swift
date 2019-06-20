@@ -53,6 +53,6 @@ class MapViewController: UIViewController, MapConnection{
     }
     
     @objc func AutoComplete(_ sender: Any) {
-        
+        NSLog("Hello World");
     }
  }

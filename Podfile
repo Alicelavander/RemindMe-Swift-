@@ -9,6 +9,5 @@ target 'RemindMe' do
   pod 'GoogleMaps'
   pod 'RealmSwift'
   pod 'GooglePlaces'
-  pod 'GooglePlacePicker'
 
 end

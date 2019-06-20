@@ -4,9 +4,6 @@ PODS:
   - GoogleMaps/Base (2.7.0)
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
-  - GooglePlacePicker (2.7.0):
-    - GoogleMaps (= 2.7.0)
-    - GooglePlaces (= 2.7.0)
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
   - Realm (3.7.4):
@@ -17,25 +14,22 @@ PODS:
 
 DEPENDENCIES:
   - GoogleMaps
-  - GooglePlacePicker
   - GooglePlaces
   - RealmSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleMaps
-    - GooglePlacePicker
     - GooglePlaces
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
-  GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   Realm: a469bb59e33f9926102ccaea4349822c53b9117e
   RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
 
-PODFILE CHECKSUM: f3e0a5a0b0faf0cda895df6f21ab3b7d178db626
+PODFILE CHECKSUM: bb66cbda3e72b3689dc8fd9b1f8d57316f886b36
 
 COCOAPODS: 1.5.3

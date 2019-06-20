@@ -21,9 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>現在地を取得するのに使います。</string>
+	<string>We will use location in background to notificate you the task.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>現在地を取得するのに使います。</string>
+	<string>We will use location for you to select the place.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
