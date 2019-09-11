@@ -17,7 +17,6 @@ protocol MapConnection {
 }
 
 class MapViewController: UIViewController, MapConnection{
-    @IBOutlet weak var SearchBar: UITextField!
     @IBOutlet weak var SelectButton: UIButton!
     var latitude = ""
     var longitude = ""
@@ -48,11 +47,5 @@ class MapViewController: UIViewController, MapConnection{
         SelectButton.layer.masksToBounds = true
         SelectButton.layer.borderWidth = 1
         SelectButton.layer.borderColor = UIColor.black.cgColor
-        
-        SearchBar.addTarget(self, action: #selector(self.AutoComplete(_:)), for: UIControl.Event.editingDidEndOnExit)
-    }
-    
-    @objc func AutoComplete(_ sender: Any) {
-        NSLog("Hello World");
-    }
  }
+}
