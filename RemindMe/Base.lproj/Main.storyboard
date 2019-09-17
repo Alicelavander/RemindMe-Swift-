@@ -564,7 +564,6 @@
                         <viewLayoutGuide key="safeArea" id="hQM-WN-Gt0"/>
                     </view>
                     <connections>
-                        <outlet property="SearchBar" destination="eEN-kW-vKt" id="LtT-hM-YQY"/>
                         <outlet property="SelectButton" destination="cdj-vo-w3O" id="geM-LX-jHD"/>
                         <segue destination="5mj-DO-ovt" kind="unwind" identifier="BackToAddToDo" unwindAction="unwindToAddToDoWithSender:" id="r90-4p-Glh"/>
                     </connections>
