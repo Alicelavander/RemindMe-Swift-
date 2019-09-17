@@ -14,5 +14,10 @@
 
 "statusLabel.NoLocation" = "The location service is unavailable. Please set the location service on from the Settings app.";
 
-"alartBefore.removeALLTODO" = "";
+"alartBefore.removeALLTODO" = "All of the ToDo will be removed. Are you sure you want to delete all of the ToDos?";
 
+"titleBefore.removeALLTODO" = "Deleting all ToDos";
+
+"alartAfter.removeALLTODO" = "All of the ToDos are deleted.";
+
+"titleAfter.removeALLTODO" = "All ToDos deleted.";

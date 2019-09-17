@@ -6,7 +6,6 @@
   Copyright © 2019年 Alicelavander. All rights reserved.
 */
 
-
 "test.test" = "テスト";
 
 "notification.msge" = "ここら辺でやることがあります！";
@@ -14,3 +13,11 @@
 "statusLabel.NoTask" = "ここら辺ではタスクがありません。下のボタンからタスクを登録してください。";
 
 "statusLabel.NoLocation" = "位置情報が許可されていません。設定のアプリからこのアプリの位置情報を許可してください。";
+
+"alartBefore.removeALLTODO" = "記録に残っているすべてのToDoを削除します。よろしいですか？";
+
+"titleBefore.removeALLTODO" = "タスク全削除";
+
+"alartAfter.removeALLTODO" = "全てのToDoが削除されました。";
+
+"titleAfter.removeALLTODO" = "タスク全削除完了";

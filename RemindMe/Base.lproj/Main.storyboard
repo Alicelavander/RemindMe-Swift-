@@ -242,8 +242,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="5nW-Bf-gtS"/>
                     <connections>
+                        <outlet property="Table" destination="HVZ-e5-CsH" id="sV8-s6-QiZ"/>
                         <outlet property="statusLabel" destination="nXT-fR-htv" id="DKa-rS-Wdw"/>
-                        <outlet property="table" destination="HVZ-e5-CsH" id="2ZS-Bs-9aU"/>
                         <segue destination="ewL-Iz-kPq" kind="show" identifier="ShowDetail" id="DNJ-DP-HgV"/>
                     </connections>
                 </viewController>
