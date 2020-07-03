@@ -20,7 +20,6 @@ class SettingViewController: UIViewController {
         let alert: UIAlertController = UIAlertController(title: NSLocalizedString("titleAfter.removeALLTODO", comment: ""), message: NSLocalizedString("alartAfter.removeALLTODO", comment: ""), preferredStyle:  UIAlertController.Style.alert)
         
         
-        
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:nil)
         alert.addAction(defaultAction)
         present(alert, animated: true, completion: nil)

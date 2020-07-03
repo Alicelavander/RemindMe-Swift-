@@ -75,7 +75,7 @@
 "rVp-uW-fjI.normalTitle" = "追加";
 
 /* Class = "UILabel"; text = "Color tag -If you didn't select, it will be gray."; ObjectID = "s5i-FT-L3J"; */
-"s5i-FT-L3J.text" = "色タグ - 選択しなかった場合は灰色として表示されます。";
+"s5i-FT-L3J.text" = "色タグ";
 
 /* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "z6w-sE-CbG"; */
 "z6w-sE-CbG.normalTitle" = "削除";
