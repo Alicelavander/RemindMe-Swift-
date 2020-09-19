@@ -19,7 +19,7 @@ public class NotificationManager: NSObject {
     }
     
     func setLocationBasedLocalNotification(
-        region region: CLCircularRegion,
+        region: CLCircularRegion,
         regionTriggersOnce: Bool = true,
         alertAction: String? = nil,
         alertBody: String? = nil,
